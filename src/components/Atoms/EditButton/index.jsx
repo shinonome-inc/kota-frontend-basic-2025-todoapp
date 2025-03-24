@@ -3,9 +3,9 @@ import React from "react";
 import pencil from "../../../assets/svg/pencil.svg";
 import COLOR from "../../../variables/color";
 
-export const EditButton = () => {
+export const EditButton = (props) => {
     return (
-        <StyledButton onClick={() => console.log("click")}>
+        <StyledButton onClick={props.onClick}>
             <Icon/>
         </StyledButton>
     );
