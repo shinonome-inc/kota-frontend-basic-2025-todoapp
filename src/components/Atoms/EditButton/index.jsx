@@ -6,37 +6,28 @@ import COLOR from "../../../variables/color";
 export const EditButton = (props) => {
     return (
         <StyledButton onClick={props.onClick}>
-            <Icon/>
+            <Icon src={pencil}/>
         </StyledButton>
     );
 }
 
-const Icon = () => {
-    return <img src={pencil}/>;
-}
+const Icon = styled.img`
+    width: 20px;
+    height: 20px;
+`;
 
 const StyledButton = styled.button`
-    position: relative;
-    font-size: 20px;
+    width: 20px;
+    height: 20px;
     color: ${COLOR.LIGHT_GRAY};
     background: none;
     border: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
-    overflow: hidden;
 
-    &::after {
-        content: "";
-        position: absolute;
-        width: 24px;
-        height: 24px;
-        background: ${COLOR.LIGHT_GRAY_TRANSPARENT};
-        border-radius: 50%;
-    }
-
-    &:hover::after {
+    &:hover {
         background: ${COLOR.LIGHT_GRAY_TRANSLUCENT};
+        border-radius: 50%;
     }
 `;
