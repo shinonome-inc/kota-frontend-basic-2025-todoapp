@@ -8,18 +8,18 @@ import TEXT from "../../../variables/texts";
 export const AddTaskButton = (props) => {
     return (
         <StyledButton onClick={props.onClick}>
-            <Icon/>
+            <Icon src={plus}/>
             <div>タスクを追加</div>
         </StyledButton>
     );
 }
 
-const Icon = () => {
-    return <img src={plus}/>;
-}
+const Icon = styled.img`
+    width: 20px;
+    height: 20px;
+`;
 
 const StyledButton = styled.button`
-    position: relative;
     font-family: ${FONTFAMILY.NOTO_SANS};
     color: ${COLOR.GREEN};
     ${TEXT.S};
@@ -28,20 +28,11 @@ const StyledButton = styled.button`
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
     gap: 10px;
     padding: 2px 6px;
 
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: ${COLOR.LIGHT_GRAY_TRANSPARENT};
-        border-radius: 15px;
-    }
-
-    &:hover::after {
+    &:hover {
         background: ${COLOR.GREEN_TRANSLUCENT};
+        border-radius: 12px;
     }
 `;
