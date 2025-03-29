@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import React, { useState }  from "react";
+import { Checkbox } from "../Atoms/Checkbox/index";
+import { EditButton } from "../Atoms/EditButton/index";
+import Input from "../Atoms/Input/index";
 import check from "../../../assets/svg/check.svg";
 import COLOR from "../../../variables/color";
 
@@ -18,14 +21,34 @@ export default function Task({ onTaskNameChange, onTaskComplete, taskName, defau
   
     return (
         <StyledWrapper>
-            <StyledCheckboxWrapper onClick = { onTaskComplete }/>
+            <StyledCheckboxWrapper>
+                <Checkbox onClick = { onTaskComplete }/>
+            </StyledCheckboxWrapper>
             {isEditing === "true" ? 
-                onEditComplete = {onEditComplete} defaultValue = {taskName}:
+                <Input onEditComplete = {onEditComplete} defaultValue = {taskName}/>:
                 <StyledNameAndButtonWrapper>
                     <StyledTaskName>{taskName}</StyledTaskName>
-                    <StyledEditButtonWrapper onClick = { onEditButtonClick }/>
+                    <StyledEditButtonWrapper>
+                        <EditButton onClick = { onEditButtonClick }/>
+                    </StyledEditButtonWrapper>
                 </StyledNameAndButtonWrapper>
             }
         </StyledWrapper>
     );
 }
+
+const StyledWrapper = styled.div`
+    
+`
+const StyledCheckboxWrapper = styled.div`
+    
+`
+const StyledNameAndButtonWrapper = styled.div`
+    
+`
+const StyledTaskName = styled.div`
+    
+`
+const StyledEditButtonWrapper = styled.div`
+    
+`
