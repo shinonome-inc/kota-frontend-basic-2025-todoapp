@@ -3,7 +3,6 @@ import React, { useState }  from "react";
 import { Checkbox } from "../Atoms/Checkbox/index";
 import { EditButton } from "../Atoms/EditButton/index";
 import Input from "../Atoms/Input/index";
-import check from "../../../assets/svg/check.svg";
 import COLOR from "../../../variables/color";
 
 export default function Task({ onTaskNameChange, onTaskComplete, taskName, defaultIsEditing }) {
