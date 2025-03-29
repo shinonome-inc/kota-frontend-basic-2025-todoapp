@@ -4,13 +4,13 @@ export default { component: Task };
 
 export const Default = {
     args: {
-        onTaskNameChange: (value) => {
-            console.log("taskName changed:", value);
+        onTaskNameChange: (taskName) => {
+            console.log("taskName changed:", taskName);
         },
         onTaskComplete: () => {
             console.log("task completed");
         },
-        taskName: "", 
+        taskName: "harada", 
         defaultIsEditing: false,
     },
 };
