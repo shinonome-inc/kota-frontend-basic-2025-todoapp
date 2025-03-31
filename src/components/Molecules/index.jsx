@@ -61,6 +61,7 @@ const StyledTaskName = styled.div`
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   ${TEXT.S};
+  padding: 0 4px;
 `;
 const StyledEditButtonWrapper = styled.div`
   align-items: center;
