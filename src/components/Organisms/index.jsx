@@ -1,11 +1,7 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 import { AddTaskButton } from "../Atoms/AddTaskButton/index";
-import { Task } from "../Molecules/index";
-import Input from "../Atoms/Input/index";
-import COLOR from "../../variables/color";
-import FONTFAMILY from "../../variables/font_family";
-import TEXT from "../../variables/texts";
+import Task from "../Molecules/index";
 
 export default function TodoCard() {
   const [taskList, setTaskList] = useState([]);
@@ -19,22 +15,34 @@ export default function TodoCard() {
   };
 
   const onTaskComplete = (index) => {
-    taskList.filter((taskList) => !taskList[index]);
+    setTaskList(taskList.filter((_, i) => i !== index));
   };
 
-  const onTaskNameChange = (value, index) => {};
+  const onTaskNameChange = (value, index) => {
+    if (value.trim() === "") {
+      return setTaskList(taskList.filter((_, i) => i !== index));
+    } else {
+      return setTaskList(
+        taskList.map((task, i) =>
+          i === index ? { ...task, name: value, initializing: false } : task
+        )
+      );
+    }
+  };
 
   return (
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
       <StyledTaskList>
-        <Task
-          key={index}
-          onTaskComplete={onTaskComplete(index)}
-          onTaskNameChange={onTaskNameChange(value, index)}
-          taskName={task.name}
-          defaultEditing={task.initializing}
-        />
+        {taskList.map((task, index) => (
+          <Task
+            key={index}
+            onTaskComplete={() => onTaskComplete(index)}
+            onTaskNameChange={(value) => onTaskNameChange(value, index)}
+            taskName={task.name}
+            defaultIsEditing={task.initializing}
+          />
+        ))}
       </StyledTaskList>
     </StyledWrapper>
   );

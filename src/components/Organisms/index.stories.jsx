@@ -1,5 +1,5 @@
-import Task from "./index";
+import TodoCard from "./index";
 
-export default { component: Task };
+export default { component: TodoCard };
 
 export const Default = {};
