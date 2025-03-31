@@ -44,6 +44,7 @@ export default function Task({
 }
 
 const StyledWrapper = styled.div`
+  margin-top: 10px;
   display: flex;
   padding: 2px 6px;
 `;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { AddTaskButton } from "../Atoms/AddTaskButton/index";
 import Task from "../Molecules/index";
+import COLOR from "../../variables/color";
 
 export default function TodoCard() {
   const [taskList, setTaskList] = useState([]);
@@ -48,5 +49,8 @@ export default function TodoCard() {
   );
 }
 
-const StyledWrapper = styled.div``;
+const StyledWrapper = styled.div`
+  background-color: ${COLOR.LIGHT_BLACK};
+  padding: 20px;
+`;
 const StyledTaskList = styled.div``;
