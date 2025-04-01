@@ -44,6 +44,7 @@ export default function Task({
 }
 
 const StyledWrapper = styled.div`
+  margin-top: 10px;
   display: flex;
   padding: 2px 6px;
 `;
@@ -61,6 +62,7 @@ const StyledTaskName = styled.div`
   color: ${COLOR.LIGHT_GRAY};
   font-family: ${FONTFAMILY.NOTO_SANS};
   ${TEXT.S};
+  padding: 0 4px;
 `;
 const StyledEditButtonWrapper = styled.div`
   align-items: center;
