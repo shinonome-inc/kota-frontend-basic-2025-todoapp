@@ -34,7 +34,7 @@ export default function TodoCard() {
   return (
     <StyledWrapper>
       <AddTaskButton onClick={onAddTaskButtonClick} />
-      <StyledTaskList>
+      <div>
         {taskList.map((task, index) => (
           <Task
             key={index}
@@ -44,7 +44,7 @@ export default function TodoCard() {
             defaultIsEditing={task.initializing}
           />
         ))}
-      </StyledTaskList>
+      </div>
     </StyledWrapper>
   );
 }
@@ -53,4 +53,3 @@ const StyledWrapper = styled.div`
   background-color: ${COLOR.LIGHT_BLACK};
   padding: 20px;
 `;
-const StyledTaskList = styled.div``;
