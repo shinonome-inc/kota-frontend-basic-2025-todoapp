@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AddTaskButton } from "../Atoms/AddTaskButton/index";
 import Task from "../Molecules/index";
 import COLOR from "../../variables/color";
+import BREAKPOINT from "../../variables/breakpoint";
 
 export default function TodoCard() {
   const [taskList, setTaskList] = useState([]);
@@ -52,4 +53,9 @@ export default function TodoCard() {
 const StyledWrapper = styled.div`
   background-color: ${COLOR.LIGHT_BLACK};
   padding: 20px;
+  width: 100%;
+  border-radius: 4px;
+  @media (min-width: ${BREAKPOINT.MEDIUM}) {
+    max-width: 500px;
+  }
 `;
