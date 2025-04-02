@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { Title } from "../../../Atoms/Title/index";
+import { Title } from "../../../components/Atoms/Title/index";
 import TodoCard from "../../../components/Organisms/index";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 export default function MainPage() {
   return (
@@ -12,4 +13,13 @@ export default function MainPage() {
   );
 }
 
-const StyledWrapper = styled.div``;
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  @media (min-width: ${BREAKPOINT.MEDIUM}) {
+    padding-top: 60px;
+  }
+`;
