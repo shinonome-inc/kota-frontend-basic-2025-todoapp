@@ -54,6 +54,7 @@ const StyledWrapper = styled.div`
   background-color: ${COLOR.LIGHT_BLACK};
   padding: 20px;
   width: 100%;
+  border-radius: 4px;
   @media (min-width: ${BREAKPOINT.MEDIUM}) {
     max-width: 500px;
   }
