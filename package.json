@@ -1,7 +1,7 @@
 {
   "name": "fb2022-todoapp",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "index.jsx",
   "repository": "https://github.com/shinonome-inc/frontend-basic-2022-todoapp.git",
   "author": "MoAI522",
   "license": "MIT",
