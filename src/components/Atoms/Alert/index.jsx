@@ -5,9 +5,9 @@ import FONTFAMILY from "../../../variables/font_family";
 import TEXT from "../../../variables/texts";
 import BREAKPOINT from "../../../variables/breakpoint";
 
-export default function Alert({ isActive }) {
+export default function Alert({ visible }) {
   return (
-    <StyledAlert isActive={isActive}>
+    <StyledAlert visible={visible}>
       タスクの名前が設定されていません。
     </StyledAlert>
   );
@@ -27,8 +27,8 @@ const StyledAlert = styled.div`
   text-align: center;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: ${(props) =>
-    props.isActive ? "translate(-50%, -40%)" : "translate(0, 0)"};
-  opacity: ${(props) => (props.isActive ? 1 : 0)};
+    props.visible ? "translate(-50%, -40%)" : "translate(0, 0)"};
+  opacity: ${(props) => (props.visible ? 1 : 0)};
   @media (min-width: ${BREAKPOINT.MEDIUM}) {
     top: 40px;
     margin: 0 20px;
