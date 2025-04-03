@@ -6,13 +6,13 @@ import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
 import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
+const AlertHandlerContext = useAlertHandlerContext();
+
 export default function TodoCard() {
   const [taskList, setTaskList] = useState(() => {
     const savedTask = localStorage.getItem("localKey");
     return savedTask ? JSON.parse(savedTask) : [];
   });
-
-  const AlertHandlerContext = useAlertHandlerContext();
 
   useEffect(() => {
     localStorage.setItem("localKey", JSON.stringify(taskList));
