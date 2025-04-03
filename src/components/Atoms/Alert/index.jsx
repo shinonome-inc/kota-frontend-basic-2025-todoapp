@@ -5,12 +5,8 @@ import FONTFAMILY from "../../../variables/font_family";
 import TEXT from "../../../variables/texts";
 import BREAKPOINT from "../../../variables/breakpoint";
 
-export default function Alert({ visible }) {
-  return (
-    <StyledAlert visible={visible}>
-      タスクの名前が設定されていません。
-    </StyledAlert>
-  );
+export default function Alert({ visible, errorText }) {
+  return <StyledAlert visible={visible}>{errorText}</StyledAlert>;
 }
 
 const StyledAlert = styled.div`
