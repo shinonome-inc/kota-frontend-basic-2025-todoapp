@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Title } from "../../../components/Atoms/Title/index";
-import TodoCard from "../../../components/Organisms/index";
+import TodoCard from "../../../components/Organisms/TodoCard/index";
 import BREAKPOINT from "../../../variables/breakpoint";
 
 export default function MainPage() {

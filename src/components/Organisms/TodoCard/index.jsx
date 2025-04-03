@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import { AddTaskButton } from "../Atoms/AddTaskButton/index";
-import Task from "../Molecules/index";
-import COLOR from "../../variables/color";
-import BREAKPOINT from "../../variables/breakpoint";
+import { AddTaskButton } from "../../Atoms/AddTaskButton/index";
+import Task from "../../Molecules/index";
+import COLOR from "../../../variables/color";
+import BREAKPOINT from "../../../variables/breakpoint";
 
 export default function TodoCard() {
   const [taskList, setTaskList] = useState([]);
