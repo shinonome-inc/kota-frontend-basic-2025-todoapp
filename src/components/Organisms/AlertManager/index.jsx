@@ -2,9 +2,9 @@ import React, { useEffect } from "react";
 import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 import Alert from "../../Atoms/Alert";
 
-const AlertHandlerContext = useAlertHandlerContext();
-
 export const AlertManager = () => {
+  const AlertHandlerContext = useAlertHandlerContext();
+
   useEffect(() => {
     if (AlertHandlerContext.visible) {
       setTimeout(() => {
