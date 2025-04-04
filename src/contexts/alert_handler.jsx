@@ -23,7 +23,7 @@ export const AlertHandlerProvider = ({ children }) => {
   };
 
   return (
-    <AlertHandlerContext.Provider value={{ contextValue }}>
+    <AlertHandlerContext.Provider value={contextValue}>
       {children}
     </AlertHandlerContext.Provider>
   );
