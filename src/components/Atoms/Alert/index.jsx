@@ -6,27 +6,35 @@ import TEXT from "../../../variables/texts";
 import BREAKPOINT from "../../../variables/breakpoint";
 
 export default function Alert({ visible, errorText }) {
-  return <StyledAlert visible={visible}>{errorText}</StyledAlert>;
+  return (
+    <StyledAlertWrapper visible={visible}>
+      <StyledAlert>{errorText}</StyledAlert>
+    </StyledAlertWrapper>
+  );
 }
 
-const StyledAlert = styled.div`
+const StyledAlertWrapper = styled.div`
   position: absolute;
   left: 50%;
   top: 80px;
-  color: ${COLOR.WHITE};
   background-color: ${COLOR.RED};
-  padding: 10px 20px;
-  ${TEXT.S};
-  font-family: ${FONTFAMILY.NOTO_SANS};
   border-radius: 4px;
+  width: 100%;
   max-width: 400px;
-  text-align: center;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: ${(props) =>
-    props.visible ? "translate(-50%, -40%)" : "translate(0, 0)"};
+    props.visible ? "translate(-50%, 40%)" : "translate(-50%, 0)"};
   opacity: ${(props) => (props.visible ? 1 : 0)};
-  @media (min-width: ${BREAKPOINT.MEDIUM}) {
+  @media (max-width: ${BREAKPOINT.MEDIUM}) {
     top: 40px;
-    margin: 0 20px;
+    max-width: 280px;
   }
+`;
+
+const StyledAlert = styled.div`
+  padding: 10px 20px;
+  color: ${COLOR.WHITE};
+  ${TEXT.S};
+  font-family: ${FONTFAMILY.NOTO_SANS};
+  text-align: center;
 `;
