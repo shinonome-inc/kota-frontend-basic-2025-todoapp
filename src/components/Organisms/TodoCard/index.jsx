@@ -4,8 +4,11 @@ import { AddTaskButton } from "../../Atoms/AddTaskButton/index";
 import Task from "../../Molecules/index";
 import COLOR from "../../../variables/color";
 import BREAKPOINT from "../../../variables/breakpoint";
+import { useAlertHandlerContext } from "../../../contexts/alert_handler";
 
 export default function TodoCard() {
+  const AlertHandlerContext = useAlertHandlerContext();
+
   const [taskList, setTaskList] = useState(() => {
     const savedTask = localStorage.getItem("localKey");
     return savedTask ? JSON.parse(savedTask) : [];
@@ -28,7 +31,8 @@ export default function TodoCard() {
   };
 
   const onTaskNameChange = (value, index) => {
-    if (value.trim() === "") {
+    if (value === "") {
+      AlertHandlerContext.setAlert("タスクの名前が設定されていません。");
       return setTaskList(taskList.filter((_, i) => i !== index));
     } else {
       return setTaskList(
