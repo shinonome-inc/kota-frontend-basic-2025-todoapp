@@ -4,6 +4,7 @@ export default { component: Alert };
 
 export const Default = {
   args: {
-    isActive: true,
+    visible: true,
+    errorText: "タスクの名前が設定されていません。",
   },
 };
