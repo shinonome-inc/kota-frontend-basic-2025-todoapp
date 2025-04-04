@@ -19,8 +19,7 @@ const StyledAlertWrapper = styled.div`
   top: 80px;
   background-color: ${COLOR.RED};
   border-radius: 4px;
-  width: 100%;
-  max-width: 400px;
+  width: 400px;
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
   transform: ${(props) =>
     props.visible ? "translate(-50%, 40%)" : "translate(-50%, 0)"};
@@ -28,6 +27,7 @@ const StyledAlertWrapper = styled.div`
   @media (max-width: ${BREAKPOINT.MEDIUM}) {
     top: 40px;
     max-width: 280px;
+    width: 100%;
   }
 `;
 
